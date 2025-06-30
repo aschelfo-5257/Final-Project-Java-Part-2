@@ -2,13 +2,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerInventory {
-    private List<Item> items;
+    private final List<Item> items;
 
     public PlayerInventory() {
         this.items = new ArrayList<>();
     }
 
-    public void addItem(Item item) {
+    public boolean addItem(Item item) {
+        if (item == null) return false;
+        items.add(item);
+        return true;
+        }
         items.add(item);
         System.out.println(item.getName() + " added to inventory.");
     }
@@ -17,9 +21,7 @@ public class PlayerInventory {
         if (items.remove(item)) {
             System.out.println(item.getName() + " removed from inventory.");
         } else {
-            for (Item i : items) {
-                System.out.println("- " + i.getName());
-            }
+            System.out.println(item.getName() + " not found in inventory.");
         }
     }
 
