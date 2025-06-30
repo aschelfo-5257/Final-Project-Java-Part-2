@@ -8,13 +8,13 @@ public class GameInventory {
         // Represents the player class that manages or stores game items in the inventory (Does not show in the snippet.)
         playerInventory.addItem(sword); // Items added sword to the PlayerInventory.
         playerInventory.addItem(potion); // Items added potion to the PlayerInventory.
-        playerInventory.displayInventory(); // The player's inventory has to be displayed.
 
-        playerInventory.removeItem(sword);
-        playerInventory.displayInventory();
+        playerInventory.removeItem(sword); // Removes the “Sword” from the inventory and displays the inventory again.
+        playerInventory.removeItem(potion); // Removes the “Potion” from the inventory and displays the inventory again.
+        playerInventory.displayInventory(); // The player's inventory has to be displayed.
     }
 }
-/* Important Note: In Update 2 - UML dictionary, all of the class files needed to be separated from the game system to run the compiled file smoothly.
+/* Important Note: In Update 2 - UML dictionary, all of the class files should be separated for compilation. Make sure each class (GameInventory, Item, PlayerInventory, StoreInventory) is in its own file and named accordingly.
 
     Named the separate file:
     - GameInventory.java
