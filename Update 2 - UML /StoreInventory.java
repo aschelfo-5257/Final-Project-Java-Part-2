@@ -1,10 +1,13 @@
-import java.util.HashMap;
+import java.util.ConcurrentHashMap;
 import java.util.Map;
 
 public class StoreInventory {
-    private Map<String, Item> inventory = new HashMap<>();
+    private final Map<String, Item> inventory = new ConcurrentHashMap<>();
 
     public void addItem(Item item) {
+        if (item == null || item.getName() == null) {
+            throw new IllegalArgumentException("Item and item name must not be null.");
+        }
         inventory.put(item.getName(), item);
     }
 
@@ -22,3 +25,4 @@ public class StoreInventory {
         return (item != null) ? item.getQuantity() : 0;
     }
 }
+// Important Note: Use ConcurrentHashMap instead of HashMap.
