@@ -1,4 +1,4 @@
-public class Inventory {
+public class InventoryItem {
     private String itemName;
     private String itemDescription;
     private double itemWeight;
