@@ -11,13 +11,15 @@ public class PlayerInventory {
     public boolean addItem(Item item) {
         if (item == null) return false;
         items.add(item);
-        return true;
-        }
-        items.add(item);
         System.out.println(item.getName() + " added to inventory.");
+        return true;
     }
 
     public void removeItem(Item item) {
+        if (item == null) {
+            System.out.println("Cannot remove null item from inventory.");
+            return;
+        }
         if (items.remove(item)) {
             System.out.println(item.getName() + " removed from inventory.");
         } else {
