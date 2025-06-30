@@ -4,32 +4,35 @@ public class Inventory {
     private double itemWeight;
     private int itemValue;
     private int itemQuantity; // Add quantity
-    // Represents an inventory with name, description, weight, value, and quantity.
-    // Set the IllegalArgumentException to prevent negative numbers.
+
+    // Represents an inventory item with name, description, weight, value, and quantity.
+    // Prevents negative numbers for weight, value, and quantity.
     public Inventory(String name, String description, double weight, int value, int quantity) {
         if (weight < 0 || value < 0 || quantity < 0)
             throw new IllegalArgumentException("Weight, value, and quantity must be non-negative");
-        this.name = name;
-        this.description = description;
-        this.weight = weight;
-        this.value = value;
-        this.quantity = quantity;
+        this.itemName = name;
+        this.itemDescription = description;
+        this.itemWeight = weight;
+        this.itemValue = value;
+        this.itemQuantity = quantity;
     }
-    // All public value items must be getters for properties.
-    public String getName() { return name; }
-    public String getDescription() { return description; }
-    public double getWeight() { return weight; }
-    public int getValue() { return value; }
-    public int getQuantity() { return quantity; }
+
+    // All fields are accessed via getters to maintain encapsulation.
+    public String getName() { return itemName; }
+    public String getDescription() { return itemDescription; }
+    public double getWeight() { return itemWeight; }
+    public int getValue() { return itemValue; }
+    public int getQuantity() { return itemQuantity; }
+
     public void setQuantity(int quantity) {
-        // The Quantity must not have a negative.
+        // Quantity must not be negative.
         if (quantity < 0)
             throw new IllegalArgumentException("Quantity must be non-negative");
-        this.quantity = quantity;
+        this.itemQuantity = quantity;
     }
 
     @Override
     public String toString() {
-    return name + " (" + description + "), Weight: " + weight + ", Value: " + value + ", Quantity: " + quantity;
-}
+        return itemName + " (" + itemDescription + "), Weight: " + itemWeight + ", Value: " + itemValue + ", Quantity: " + itemQuantity;
+    }
 }
