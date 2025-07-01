@@ -3,7 +3,6 @@ import java.util.Map;
 
 public class StoreInventory {
     private final Map<String, Item> inventory = new ConcurrentHashMap<>();
-    private final AtomicInteger quantity = new AtomicInteger();
 
     public void addItem(Item item) { // The item should not be null.
         if (item == null || item.getName() == null) {
@@ -12,7 +11,7 @@ public class StoreInventory {
         inventory.put(item.getName(), item);
     }
 
-    public boolean buyItem(String itemName) {
+    public boolean buyItem(String itemName) { 
         Item item = inventory.get(itemName);
         if (item != null) {
             int prev;
@@ -23,11 +22,13 @@ public class StoreInventory {
             return true;
         }
         return false;
+        // The buyItem method decreases the item quantity using compareAndSet, ensuring the operation is atomic and thread-safe.
     }
 
     public int getItemQuantity(String itemName) {
         Item item = inventory.get(itemName);
         return (item != null) ? item.getQuantity() : 0;
+        // If Item is mutable beyond quantity, ensure all modifications are safe.
     }
 }
 // Important Note: Use ConcurrentHashMap instead of HashMap. This is appropriate for thread-safe operations.
