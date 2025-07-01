@@ -36,3 +36,4 @@ public class InventoryItem {
         return itemName + " (" + itemDescription + "), Weight: " + itemWeight + ", Value: " + itemValue + ", Quantity: " + itemQuantity;
     }
 }
+
