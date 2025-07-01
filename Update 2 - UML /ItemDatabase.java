@@ -1,6 +1,20 @@
 import java.util.Map;
 import java.util.HashMap;
 
+// Simple Item class definition
+class Item {
+    private String name;
+
+    public Item(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}
+
 public class ItemDatabase {
     private Map<String, Item> items = new HashMap<>();
 
