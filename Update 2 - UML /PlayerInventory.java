@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
 
-// TODO: Replace this with the actual Item class import if it exists in your project
-// import your.package.name.Item;
-
 // Temporary stub for Item class to resolve compilation error
 class Item {
     private String name;
