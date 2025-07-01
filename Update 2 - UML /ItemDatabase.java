@@ -1,8 +1,8 @@
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.Map;
+
 public class ItemDatabase {
-    // Needed a method to retrieve an item by name
-    public Item getItemByName(String name) {
-        // For demonstration, return a new Item with the given name
-        return new Item(name);
+    private Map<String, Item> items = new ConcurrentHashMap<>();
     }
 
     // Main method to make the class runnable
