@@ -7,7 +7,7 @@ public class InventoryItem {
 
     // Represents an inventory item with name, description, weight, value, and quantity.
     // Prevents negative numbers for weight, value, and quantity.
-    public Inventory(String name, String description, double weight, int value, int quantity) {
+    public InventoryItem(String name, String description, double weight, int value, int quantity) {
         if (weight < 0 || value < 0 || quantity < 0)
             throw new IllegalArgumentException("Weight, value, and quantity must be non-negative");
         this.itemName = name;
