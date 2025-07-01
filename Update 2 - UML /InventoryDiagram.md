@@ -104,7 +104,7 @@ PlayerInventory has a Set of Item objects, with an association (composition/aggr
     PlayerInventory 1 ---- 0..* Item
     (items: Set<Item>)
 ---
-## Store Inventory
+## Store Inventory Class Diagram
 
 StoreInventory contains a Map of String to Item. StoreInventory has the methods: addItem, buyItem, and getItemQuantity. Item is an inner class of StoreInventory, with fields name and quantity, a constructor, and getter methods.
 
