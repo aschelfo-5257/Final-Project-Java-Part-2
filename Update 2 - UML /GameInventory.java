@@ -1,6 +1,7 @@
 public class GameInventory {
     public static void main(String[] args) {
         ItemDatabase database = new ItemDatabase();
+        // Represents the item database that contains all items available in the game.
         PlayerInventory playerInventory = new PlayerInventory();
 
         Item sword = database.getItemByName("Sword");
@@ -18,7 +19,7 @@ public class GameInventory {
 
     Named the separate file:
     - GameInventory.java
-    - Item.java
+    - Inventory.java
     - PlayerInventory.java
     - StoreInventory.java
 */
