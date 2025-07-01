@@ -1,8 +1,8 @@
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
+
+// import your.package.name.Item;
 
 // Temporary stub for Item class to resolve compilation error
 class Item {
@@ -15,7 +15,7 @@ class Item {
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
         return name != null ? name.equals(item.name) : item.name == null;
-        }
+    }
     
     
     @Override
@@ -87,5 +87,5 @@ public class PlayerInventory {
                 logger.info("- " + item.getName());
             }
         }
-    }
+    }}
     
