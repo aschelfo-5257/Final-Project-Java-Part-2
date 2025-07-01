@@ -11,10 +11,18 @@ public class StoreInventory {
         inventory.put(item.getName(), item);
     }
 
+    // In Item class
+    private final AtomicInteger quantity = new AtomicInteger();
+    
+    // In StoreInventory
     public boolean buyItem(String itemName) {
         Item item = inventory.get(itemName);
-        if (item != null && item.getQuantity() > 0) {
-            item.setQuantity(item.getQuantity() - 1);
+        if (item != null) {
+            int prev;
+            do {
+                prev = item.getQuantity();
+                if (prev == 0) return false;
+            } while (!item.getQuantityAtomic().compareAndSet(prev, prev - 1));
             return true;
         }
         return false;
