@@ -31,3 +31,40 @@ Based on the provided GameInventory.java file, this diagram represents for class
     | +removeItem(Item)       |
     | +displayInventory()     |
     +-------------------------+
+---
+## Inventory-Related Classes (UML Diagram - Text Representation)
+
+    +-------------------+        +------------------+
+    |  PlayerInventory  |<>----->|      Item        |
+    +-------------------+        +------------------+
+    | - items: Set<Item>|        | - name: String   |
+    | - capacity: int   |        +------------------+
+    |-------------------|        | +getName()       |
+    | +addItem(Item)    |        | +equals(), etc.  |
+    | +removeItem(Item) |        +------------------+
+    | +displayInventory()|
+    +-------------------+
+    
+    +-------------------+        +------------------------+
+    |  StoreInventory   |<>----->| StoreInventory.Item    |
+    +-------------------+        +------------------------+
+    | - inventory: Map  |        | - name: String         |
+    |                   |        | - quantity: int        |
+    | +addItem(Item)    |        | +getName()             |
+    | +buyItem(String)  |        | +getQuantity()         |
+    | +getItemQuantity()|        +------------------------+
+    +-------------------+
+    
+    +------------------+
+    |  InventoryItem   |
+    +------------------+
+    | - itemName       |
+    | - itemDesc       |
+    | - itemWeight     |
+    | - itemValue      |
+    | - itemQuantity   |
+    +------------------+
+    | +getName()       |
+    | +getQuantity()   |
+    | +setQuantity()   |
+    +------------------+
